@@ -18,6 +18,9 @@ public class ImportRepository(PremyaDbContext dbContext) : IImportRepository
                 batch.MetricId,
                 batch.FileStructureVersionId,
                 batch.FileName,
+                batch.DataYear,
+                batch.CalculationPeriod,
+                batch.ImportedAt,
                 batch.Status,
                 batch.RecordCount,
                 batch.ErrorMessage))
@@ -31,6 +34,9 @@ public class ImportRepository(PremyaDbContext dbContext) : IImportRepository
                 batch.MetricId,
                 batch.FileStructureVersionId,
                 batch.FileName,
+                batch.DataYear,
+                batch.CalculationPeriod,
+                batch.ImportedAt,
                 batch.Status,
                 batch.RecordCount,
                 batch.ErrorMessage))
@@ -123,7 +129,8 @@ public class ImportRepository(PremyaDbContext dbContext) : IImportRepository
         }
 
         return new ImportResponse(batch.Id, batch.MetricId, batch.FileStructureVersionId,
-            batch.FileName, batch.Status, batch.RecordCount, batch.ErrorMessage);
+            batch.FileName, batch.DataYear, batch.CalculationPeriod, batch.ImportedAt,
+            batch.Status, batch.RecordCount, batch.ErrorMessage);
     }
 
     private static FileStructureVersion? FindMatchingStructure(Metric metric, IReadOnlyList<ParsedColumn> columns) =>

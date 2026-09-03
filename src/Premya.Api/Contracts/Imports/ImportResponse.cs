@@ -5,6 +5,9 @@ public record ImportResponse(
     int MetricId,
     int FileStructureVersionId,
     string FileName,
+    int DataYear,
+    string CalculationPeriod,
+    DateTime ImportedAt,
     string Status,
     int RecordCount,
     string? ErrorMessage);
