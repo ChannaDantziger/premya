@@ -1,0 +1,28 @@
+# .NET build output
+**/bin/
+**/obj/
+
+# Angular dependencies and generated output
+**/node_modules/
+**/dist/
+
+# Local SQLite database files
+src/Premya.Api/Data/*.db
+src/Premya.Api/Data/*.db-shm
+src/Premya.Api/Data/*.db-wal
+
+# Local document rendering QA output
+DOCS/docx-qa/
+
+# IDE and operating-system files
+.vs/
+.idea/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.inspect.ndjson
